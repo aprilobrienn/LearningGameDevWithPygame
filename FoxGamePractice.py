@@ -78,25 +78,25 @@ while run:
         current_direction = "left"
         current_sprites = foxleft
         current_frame += 0.2 #it cant non-whole numbers so this being 0.2 will go to 0.4 etc until it can round to nearest whole number(1), then 1.2..... and so on. This is good because otherwise character cycles through animations too quickly
-        background_x -= speed #will move backgrounds x coords by minus speed (which is set to 5 right now)
+        background_x += speed #will move backgrounds x coords by minus speed (which is set to 5 right now)
         #rect_2.move_ip(-5, 0) #variable will move ip(in place) x -5, y 0 aka left
     elif key[pygame.K_d] == True: #else if statement for 'd' key
         current_direction = "right"
         current_sprites = foxright
         current_frame += 0.2
-        background_x += speed #will move backgrounds x coords by plus speed (which is set to 5 right now)
+        background_x -= speed #will move backgrounds x coords by plus speed (which is set to 5 right now)
         #rect_2.move_ip(+5, 0) 
     elif key[pygame.K_w] == True: #else if statement for 'w' key
         current_direction = "up"
         current_sprites = foxup
         current_frame += 0.2
-        background_y -= speed #will move backgrounds y coords by minus speed (which is set to 5 right now)
+        background_y += speed #will move backgrounds y coords by minus speed (which is set to 5 right now)
         #rect_2.move_ip(0, -5) 
     elif key[pygame.K_s] == True: #else if statement for 's' key
         current_direction = "down"
         current_sprites = foxdown
         current_frame += 0.2
-        background_y += speed #will move backgrounds y coords by plus speed (which is set to 5 right now)
+        background_y -= speed #will move backgrounds y coords by plus speed (which is set to 5 right now)
         #rect_2.move_ip(0, +5) 
 
         
@@ -108,8 +108,8 @@ while run:
         current_frame = 0
 
     screen.blit(background_image, (background_x, background_y)) #blits the background image onto the screen
-    screen.blit([int(current_frame)], fox_rect) #blits the sprite group onto the screen // int will make it so that the decimal 0.2 from earlier is rounded
-#will blit the closest int, to display current_frame, using fox_rect
+    screen.blit(current_sprites[int(current_frame)], fox_rect) #blits the sprite group onto the screen // int will make it so that the decimal 0.2 from earlier is rounded
+#will blit the current spites to the closest int, to display current_frame, using fox_rect
 
 
     for event in pygame.event.get():
