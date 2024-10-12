@@ -8,9 +8,25 @@ SCREEN_HEIGHT = 600
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Fox Game Practice")
 
-fox = pygame.image.load("foxright1.png.png").convert_alpha() #will find 'foxright1.png.png' in folder so that 
+fox = pygame.image.load("foxright1.png").convert_alpha() #will find 'foxright1.png' in folder so that 
 #fox is set to look like 'foxright1.png.png'
 #.convert_alpha ensures that the transparent backgrounf that foxright1.png originally has
+
+foxright = [pygame.image.load("foxright1.png"),
+            pygame.image.load("foxright2.png"), #groups the right-facing fox images together
+            pygame.image.load("foxright3.png")]
+
+foxleft = [pygame.image.load("foxleft1.png"),
+           pygame.image.load("foxleft2.png"), #groups the left-facing fox images together
+           pygame.image.load("foxleft3.png")]
+
+foxup = [pygame.image.load("foxup1.png"),
+         pygame.image.load("foxup2.png"), #groups the up-facing fox images together
+         pygame.image.load("foxup3.png")]
+
+foxdown = [pygame.image.load("foxdown1.png"),
+           pygame.image.load("foxdown2.png"), #groups the down-facing fox images together
+           pygame.image.load("foxdown3.png")]
 
 rect_1 = pygame.Rect(200, 100, 150, 100) #x,y,width,height
 rect_1.width = 400 #this will change the width of rect_1
