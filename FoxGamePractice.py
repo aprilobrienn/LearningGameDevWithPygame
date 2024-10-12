@@ -42,20 +42,14 @@ while run:
     #creating controls for the rect_2/fox sprite
     key = pygame.key.get_pressed()
 
-    if key[pygame.K_a] == True: #if a is pressed
-        rect_2.x -= 5           #rect_2 will move -5 pixels on x axis aka it will move left
-
-    if key[pygame.K_d] == True: #if d is pressed
-        rect_2.x += 5           #rect_2 will move +5 pixels on x axis aka it will move right
-
-
-    if key[pygame.K_w] == True: #if w is pressed
-        rect_2.y -= 5           #rect_2 will move -5 pixels on y axis aka it will move up
-
-
-    if key[pygame.K_s] == True: #if s is pressed
-        rect_2.y += 5           #rect_2 will move +5 pixels on x axis aka it will move down
-
+    if key[pygame.K_a] == True: #if statement for pressing 'a' key
+        rect_2.move_ip(-5, 0) #variable will move ip(in place) x -5, y 0 aka left
+    elif key[pygame.K_d] == True: #else if statement for 'd' key
+        rect_2.move_ip(+5, 0) 
+    elif key[pygame.K_w] == True: #else if statement for 'w' key
+        rect_2.move_ip(0, -5) 
+    elif key[pygame.K_s] == True: #else if statement for 's' key
+        rect_2.move_ip(0, +5) 
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
