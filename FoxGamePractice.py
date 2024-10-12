@@ -33,9 +33,6 @@ while run:
 
     screen.fill((173, 216, 230)) #fill screen with light blue colour
 
-    pygame.draw.rect(screen, (255, 0, 255), rect_1)
-    pygame.draw.rect(screen, (0, 255, 255), rect_2)
-
     #screen.blit(fox, (0, 0)) #will put the fox at coordinates 0,0
     screen.blit(fox, rect_2) #this will put the fox at same coordinates as rect_2
 
